@@ -464,5 +464,31 @@ if __name__ == '__main__':
     query_name = input()
 print("{0:.2f}".format(sum(student_marks[query_name])/len(student_marks[query_name])))
 
+--------
+
+Concatenate
+
+Task
+
+You are given two integer arrays of size N X P and M X P (N & M are rows, and P is the column). Your task is to concatenate the arrays along axis 0.
+
+Input Format
+
+The first line contains space separated integers N, M and P.
+The next N lines contains the space separated elements of the P columns.
+After that, the next M lines contains the space separated elements of the P columns.
+
+Output Format
+
+Print the concatenated array of size (N + M)XP.
+
+import numpy
+
+N, M, P = map(int, input().split())
+N_array = numpy.array([input().split() for i in range(N)], int)
+M_array = numpy.array([input().split() for i in range(M)], int)
+print (numpy.concatenate((N_array, M_array), axis = 0))
+
+
 
 
