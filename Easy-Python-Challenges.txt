@@ -623,4 +623,28 @@ arr = numpy.array([input().split() for i in range(N)],int)
 sum_arr = numpy.sum(arr, axis = 0)
 print(numpy.product(sum_arr))
 
+--------
+
+Min and Max
+
+Task
+
+You are given a 2-D array with dimensions N X M.
+Your task is to perform the min function over axis 1 and then find the max of that.
+
+Input Format
+
+The first line of input contains the space separated values of N and M.
+The next N lines contains M space separated integers.
+
+Output Format
+
+Compute the min along axis 1 and then print the max of that result. 
+
+import numpy
+N, M = map(int, input().split())
+arr = numpy.array([input().split() for i in range(N)], int)
+arr_min = numpy.min(arr, axis = 1)
+print(numpy.max(arr_min))
+
 
