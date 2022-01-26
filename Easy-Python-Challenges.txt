@@ -730,3 +730,147 @@ print (numpy.inner(A,B))
 print (numpy.outer(A,B))
 
 --------
+
+Polynomials
+
+Task
+
+You are given the coefficients of a polynomial P.
+Your task is to find the value of P at point x.
+
+Input Format
+
+The first line contains the space separated value of the coefficients in P.
+The second line contains the value of x.
+
+Output Format
+
+Print the desired value.
+
+import numpy
+poly_list = list(map(float, input().split()))
+x = float(input())
+print (numpy.polyval(poly_list, x))
+
+--------
+
+Swap Case
+
+Function Description
+
+Complete the swap_case function in the editor below.
+
+swap_case has the following parameters:
+
+    string s: the string to modify
+
+Returns
+
+    string: the modified string
+
+Input Format
+
+A single line containing a string s.
+
+def swap_case(s):
+    return s.swapcase()
+
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
+    
+--------
+
+String Split and Join
+
+Task
+You are given a string. Split the string on a " " (space) delimiter and join using a - hyphen.
+
+Function Description
+
+Complete the split_and_join function in the editor below.
+
+split_and_join has the following parameters:
+
+    string line: a string of space-separated words
+
+Returns
+
+    string: the resulting string
+
+Input Format
+The one line contains a string consisting of space separated words. 
+
+def split_and_join(line):
+    lines = line.split()
+    return "-".join(lines)
+
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+    
+--------
+
+What's Your Name?
+
+Function Description
+
+Complete the print_full_name function in the editor below.
+
+print_full_name has the following parameters:
+
+    string first: the first name
+    string last: the last name
+
+Prints
+
+    string: 'Hello firstname lastname! You just delved into python' where firstname and lastname are replaced with first and last.
+
+Input Format
+
+The first line contains the first name, and the second line contains the last name. 
+
+def print_full_name(first, last):
+    print ('Hello '+first+' '+last+'! You just delved into python.')
+
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+    
+--------
+
+Mutations
+
+Task
+Read a given string, change the character at a given index and then print the modified string.
+
+Function Description
+
+Complete the mutate_string function in the editor below.
+
+mutate_string has the following parameters:
+
+    string string: the string to change
+    int position: the index to insert the character at
+    string character: the character to insert
+
+Returns
+
+    string: the altered string
+
+Input Format
+
+The first line contains a string, string.
+The next line contains an integer position, the index location and a string character, separated by a space. 
+
+def mutate_string(string, position, character):
+    return string[:position] + character + string[(position+1):]
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
