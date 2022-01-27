@@ -874,3 +874,72 @@ if __name__ == '__main__':
     i, c = input().split()
     s_new = mutate_string(s, int(i), c)
     print(s_new)
+    
+--------
+
+Find a string
+
+In this challenge, the user enters a string and a substring. You have to print the number of times that the substring occurs in the given string. String traversal will take place from left to right, not from right to left.
+
+NOTE: String letters are case-sensitive.
+
+Input Format
+
+The first line of input contains the original string. The next line contains the substring.
+
+Output Format
+
+Output the integer number indicating the total number of occurrences of the substring in the original string.
+
+def count_substring(string, sub_string):
+    count = 0
+    for i in range(0, len(string)):
+        if string[i:(i + len(sub_string))] == sub_string:
+            count += 1
+    return count
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
+    
+--------
+
+String Validators
+
+Task
+
+You are given a string S.
+Your task is to find out if the string S contains: alphanumeric characters, alphabetical characters, digits, lowercase and uppercase characters.
+
+Input Format
+
+A single line containing a string S.
+
+Output Format
+
+In the first line, print True if S has any alphanumeric characters. Otherwise, print False.
+In the second line, print True if S has any alphabetical characters. Otherwise, print False.
+In the third line, print True if S has any digits. Otherwise, print False.
+In the fourth line, print True if S has any lowercase characters. Otherwise, print False.
+In the fifth line, print True if S has any uppercase characters. Otherwise, print False. 
+
+if __name__ == '__main__':
+    s = input()
+    
+method_list =['isalnum', 'isalpha', 'isdigit', 'islower', 'isupper']
+for x in method_list:
+    for i in range(0,len(s)):
+        if eval("s[i]." + x +"()"):
+            break
+    print(eval("s[i]." + x +"()"))
+
+
+or
+for method in [str.isalnum, str.isalpha, str.isdigit, str.islower, str.isupper]:
+    print any(method(c) for c in s)
+
+    for test in ('isalnum', 'isalpha', 'isdigit', 'islower', 'isupper'):
+        any(eval("c." + test + "()") for c in s)
